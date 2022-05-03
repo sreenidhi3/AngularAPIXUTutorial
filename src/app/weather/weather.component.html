@@ -26,26 +26,31 @@
     <div class="col-md-6">
       <h3 class="text-center my-4">Weather Details:</h3>
       <p class="text-center">
-        Current weather conditions:
-        {{ this.weatherData?.current.condition.text }}.
+        <strong>Current weather condition is:</strong>
+        {{ this.weatherData?.current.weather_descriptions[0] }}
       </p>
       <p class="text-center">
-        Temperature in Degrees Celsius: {{ this.weatherData?.current.temp_c }}
+        <strong>Temperature:</strong>
+         {{ this.weatherData ? this.weatherData?.current.temperature + ' °C' : ' '}} 
       </p>
       <p class="text-center">
-        Temperature in Degrees Farenheit: {{ this.weatherData?.current.temp_f }}
+        <strong>Pressure:</strong> {{ this.weatherData ? this.weatherData?.current.pressure + ' MB' : ' '}}
       </p>
       <p class="text-center">
-        Feels like in Degrees Celsius:
-        {{ this.weatherData?.current.feelslike_c }}
+        <strong>Precipitation:</strong>
+        {{ this.weatherData ? this.weatherData?.current.precip + ' mm' : ' '}}
       </p>
       <p class="text-center">
-        Feels like in Degrees Farenheit:
-        {{ this.weatherData?.current.feelslike_f }}
+        <strong>Wind Speed:</strong>
+        {{this.weatherData ? this.weatherData?.current.wind_speed + ' km/h' : ' '}} 
       </p>
       <p class="text-center">
-        Location Searched: {{ this.weatherData?.location.name }},
-        {{ this.weatherData?.location.country }}.
+        <strong>Air Humidity:</strong>
+        {{ this.weatherData ? this.weatherData?.current.humidity + ' %' : ' '}}
+      </p>
+      <p class="text-center">
+        <strong>Location Searched:</strong> {{ this.weatherData?.location.name }}
+        {{ this.weatherData?.location.country }}
       </p>
     </div>
   </div>
